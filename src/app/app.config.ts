@@ -5,13 +5,18 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideState, provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { studentsReducer } from './state/students.reducer';
+import { provideEffects } from '@ngrx/effects';
+import { StudentsRecordsEffects } from './state/students-recors.effects';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), 
+    provideHttpClient(),
     provideAnimationsAsync(),
+    provideEffects(StudentsRecordsEffects),
     provideStore(),
     provideState({
-      name: "studentsRecords",
+      name: "students",
       reducer: studentsReducer
     }),
     provideStoreDevtools({maxAge:25, logOnly: false})]

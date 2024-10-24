@@ -1,0 +1,88 @@
+{
+    "login": {
+        "id": 1,
+        "username": "Test"
+    },
+    "studentsRecords": [
+        {
+            "name": "Test",
+            "city": "Mumbai",
+            "country": "India",
+            "subject": "Mumbai",
+            "passportDeclaration": "Yes",
+            "fitnessDeclaration": "Yes",
+            "courseName": "Maths",
+            "date": "19-11-1998",
+            "state": "Maharashtra",
+            "subjects": "Maths",
+            "street": "5th street",
+            "email": "deepak@gmail.com",
+            "phone": "1122112211",
+            "postalCode": 12345
+        },
+        {
+            "name": "Test1",
+            "city": "Chennai",
+            "country": "India",
+            "subject": "Chennai",
+            "passportDeclaration": "Yes",
+            "fitnessDeclaration": "Yes",
+            "courseName": "Maths",
+            "date": "21-11-1998",
+            "state": "Maharashtra",
+            "subjects": "Maths",
+            "street": "5th street",
+            "email": "test@gmail.com",
+            "phone": "2222222222",
+            "postalCode": 12344
+        },
+        {
+            "name": "John",
+            "city": "Mumbai",
+            "country": "India",
+            "subject": "Mumbai",
+            "passportDeclaration": "Yes",
+            "fitnessDeclaration": "Yes",
+            "courseName": "Maths",
+            "date": "22-11-1998",
+            "state": "Maharashtra",
+            "subjects": "Maths",
+            "street": "5th street",
+            "email": "john@gmail.com",
+            "phone": "2222222222",
+            "postalCode": 12344
+        },
+        {
+            "name": "Sunny",
+            "city": "Mumbai",
+            "country": "India",
+            "subject": "Mumbai",
+            "passportDeclaration": "Yes",
+            "fitnessDeclaration": "Yes",
+            "courseName": "Maths",
+            "date": "20-10-1998",
+            "state": "Maharashtra",
+            "subjects": "Maths",
+            "street": "5th street",
+            "email": "deepak@gmail.com",
+            "phone": "1122112211",
+            "postalCode": 12345
+        },
+        {
+            "name": "Daizy",
+            "city": "Mumbai",
+            "country": "India",
+            "subject": "Mumbai",
+            "passportDeclaration": "Yes",
+            "fitnessDeclaration": "Yes",
+            "courseName": "Maths",
+            "date": "2-1-1998",
+            "state": "Maharashtra",
+            "subjects": "Maths",
+            "street": "5th street",
+            "email": "deepak@gmail.com",
+            "phone": "1122112211",
+            "postalCode": 12345
+        }
+    ]
+}
