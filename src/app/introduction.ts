@@ -10,3 +10,6 @@
 
 // component to store process:
 // component >> action >> effects >> service >> db >> service >> effects >> action >> reducer >> store
+
+// json-server commnad => npx json-server db.json --watch --routes routes.json
+// app command => npm run start
