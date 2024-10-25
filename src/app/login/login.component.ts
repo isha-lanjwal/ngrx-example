@@ -15,22 +15,42 @@ import { AuthService } from "../shared/auth.service";
   styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup
+  loginForm!: FormGroup
   constructor(private authService: AuthService,private router: Router){
 
   }
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
-      email: new FormControl('',[Validators.required,Validators.email]),
+      username: new FormControl('',[Validators.required]),
       password: new FormControl('',[Validators.required])
     })
   }
 
-  loginUser(){
-    if(this.loginForm.valid){
-      this.authService.login(this.loginForm?.value);
-      this.router.navigate(['/dashboard']);
-    }
-  }
+  onClickLogin() {
+		// Implement your authentication logic here, e.g., send credentials to backend
+		if (this.loginForm.valid) {
+			console.log('Form submitted with:', this.loginForm.value);
+		}
+		
+		this.authService.login().subscribe(
+			()=> {
+				if (this.authService.isLoggedIn) {
+					// Usually you would use the redirect URL from the auth service.
+					// However to keep the example simple, we will always redirect to `/admin`.
+					const redirectUrl = '/dashboard';
+	
+					// Set our navigation extras object
+					// that passes on our global query params and fragment
+					const navigationExtras: NavigationExtras = {
+						queryParamsHandling: 'preserve',
+						preserveFragment: true
+					};
+	
+					// Redirect the user
+					this.router.navigate([redirectUrl], navigationExtras);
+				}
+			}
+		);
+	}
 }
