@@ -1,27 +1,16 @@
-import { StudentsRecords } from "./students-records";
-import { createReducer,on } from "@ngrx/store";
+import { StudentsRecords } from "./students-records.model";
+
+import { createReducer, on } from "@ngrx/store";
+
 import * as Actions from "./students-records.action";
 
-export const initState:{StudentsRecords: StudentsRecords []} = {
-    StudentsRecords: [{
-        name: "Test",
-        city: "Mumbai",
-        country: "India",
-        subject: "Mumbai",
-        passportDeclaration: "Yes",
-        fitnessDeclaration: "Yes",
-        courseName: "Maths",
-        date: "19-11-1998",
-        state: "Maharashtra",
-        subjects: "Maths",
-        street: "5th street",
-        email: "test@gmail.com",
-        phone: "1122112211",
-        postalCode: 12345,
-    }]
-};
+import { adapter, initialState } from "./students-records";
 
 export const studentsReducer = createReducer(
-    initState,
-    on(Actions.callStudentsRecordsApiSuccess,(state:any,{ payload }:any) => ({...state,StudentsRecords:payload}))
+    initialState,
+    on(Actions.callStudentsRecordsApiSuccess, 
+        (state: any, { payload }: any) => {
+            return adapter.addMany(payload, state);
+        }
+    )
 );
